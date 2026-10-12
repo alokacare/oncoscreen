@@ -1,0 +1,23 @@
+{
+  "assessmentId": "SHOWCASE-DEMO-001",
+  "synthetic": true,
+  "person": {
+    "displayName": "Asha Demo",
+    "recordType": "fictional adult profile"
+  },
+  "responses": [
+    {
+      "prompt": "Have you noticed a recent change you would like a clinician to review?",
+      "answer": "Yes"
+    },
+    {
+      "prompt": "Have you already discussed this concern with a healthcare professional?",
+      "answer": "No"
+    },
+    {
+      "prompt": "Would you like support arranging an appropriate follow-up?",
+      "answer": "Yes"
+    }
+  ],
+  "status": "submitted_for_clinician_review"
+}

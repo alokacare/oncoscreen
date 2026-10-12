@@ -1,0 +1,50 @@
+openapi: 3.1.0
+info:
+  title: OncoScreen Showcase Mock API
+  version: 1.0.0
+  description: Non-clinical contract for a local synthetic demonstration. No server is included.
+paths:
+  /showcase/submissions:
+    post:
+      summary: Create a fictional demonstration receipt
+      operationId: createShowcaseSubmission
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShowcaseInput'
+      responses:
+        '201':
+          description: Synthetic receipt created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShowcaseReceipt'
+components:
+  schemas:
+    ShowcaseInput:
+      type: object
+      required: [synthetic, responses]
+      properties:
+        synthetic:
+          const: true
+        responses:
+          type: array
+          items:
+            type: object
+            required: [prompt, answer]
+            properties:
+              prompt: { type: string }
+              answer: { type: string }
+    ShowcaseReceipt:
+      type: object
+      required: [assessmentId, status, synthetic]
+      properties:
+        assessmentId:
+          type: string
+          example: SHOWCASE-DEMO-001
+        status:
+          const: submitted_for_clinician_review
+        synthetic:
+          const: true
